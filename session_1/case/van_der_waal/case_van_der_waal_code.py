@@ -3,10 +3,19 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from VanDerWaals import *
 
-t_range = np.arange(223.15, 393.15, 10)
-v_range = np.arange(0.00006, 0.001, 0.000001)
-p_vdw = VanDerWaals(1, 1, t_range, v_range, 0.0821, 273.15)
+t_start = 223.15
+t_end = 393.15
+t_points = 940
+t_range = np.linspace(t_start, t_end, t_points)
 
-p_calc = p_vdw.generate_pressure_grid()
+v_start = 0.00006
+v_end = 0.001
+v_steps = 0.000001
+v_range = np.arange(v_start, v_end, v_steps)
 
-print(p_calc)
+vdw = VanDerWaals(1, 1, t_range, v_range)
+
+p_values = vdw.calc_pressure_vdw()
+
+plt.plot(t_range, p_values)
+plt.show()
