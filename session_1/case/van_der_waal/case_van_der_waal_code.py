@@ -15,7 +15,7 @@ v_range = np.arange(v_start, v_end, v_steps)
 
 vdw = VanDerWaals(1, 1, t_range, v_range)
 
-p_values = vdw.calc_pressure_vdw()
+p_values = vdw.calc_pressure()
 
 plt.plot(t_range, p_values)
 plt.show()

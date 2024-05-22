@@ -20,6 +20,7 @@ class VanDerWaals:
     calc_pressure_vdw()
         Calculates the pressure of the gas using the Van der Waals equation of state.
     """    
+    
     # Gas constant in l.atm/(mol.K)
     R = 8.314462618
     
@@ -66,7 +67,7 @@ class VanDerWaals:
         self.b = (VanDerWaals.R * self.tc) / (VanDerWaals.CRITICAL_FACTOR * self.pc)
         
 
-    def calc_pressure_vdw(self):
+    def calc_pressure(self):
         """
         Calculates the pressure of the gas using the Van der Waals equation of state.
 
